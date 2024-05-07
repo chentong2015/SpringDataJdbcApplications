@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-data-jpa-master" />
+        <module name="spring-data-jpa-hibernate-test" />
+        <module name="spring-data-jdbc-template" />
+        <module name="demo-spring-data-jpa" />
+        <module name="spring-data-access-test" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
