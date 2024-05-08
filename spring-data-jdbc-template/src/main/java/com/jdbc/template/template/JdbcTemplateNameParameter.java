@@ -1,6 +1,5 @@
 package com.jdbc.template.template;
 
-import com.jdbc.template.model.Information;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 
 // SpringNamedParameterJdbcTemplate:
-// 使用具有名称的参数替代传统的'?' placeholders，解决代码可读性，参数的顺序问题
+// 使用具名参数替代传统的placeholder'?', 解决可读性和参数的顺序问题
 @Repository("baseNamedParameterJdbcTemplate")
 public class JdbcTemplateNameParameter implements InformationDao {
 

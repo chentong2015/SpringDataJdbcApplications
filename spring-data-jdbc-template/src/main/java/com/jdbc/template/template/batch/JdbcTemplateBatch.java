@@ -1,6 +1,6 @@
-package com.jdbc.template.template;
+package com.jdbc.template.template.batch;
 
-import com.jdbc.template.model.Information;
+import com.jdbc.template.template.Information;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -9,8 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-// 使用Spring JdbcTemplate来实现数据的批量操作
-public class JdbcTemplateBatch implements InformationDao {
+public class JdbcTemplateBatch {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -19,8 +18,8 @@ public class JdbcTemplateBatch implements InformationDao {
     }
 
     // 1. 设置PreparedStatement的参数
-    // 2. 批量执行相同的SQL，传递list列表序列的参数
-    public int[] batchUpdate(final List<Information> infoList) {
+    // 2. 传递list列表序列的参数并批量执行相同的SQL
+    public int[] batchUpdate(List<Information> infoList) {
         return this.jdbcTemplate.batchUpdate(
                 "INSERT INTO information (id, name, place, year) VALUES (?, ?, ?, ?)",
                 new BatchPreparedStatementSetter() {
@@ -36,19 +35,5 @@ public class JdbcTemplateBatch implements InformationDao {
                         return infoList.size();
                     }
                 });
-    }
-
-    @Override
-    public boolean insertInformation(Information info) {
-        return false;
-    }
-
-    @Override
-    public Information getInformation(int id) {
-        return null;
-    }
-
-    @Override
-    public void cleanupTable() {
     }
 }

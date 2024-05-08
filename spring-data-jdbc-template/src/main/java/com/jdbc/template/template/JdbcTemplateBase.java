@@ -1,6 +1,5 @@
 package com.jdbc.template.template;
 
-import com.jdbc.template.model.Information;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -30,14 +29,15 @@ public class JdbcTemplateBase implements InformationDao {
     @Override
     public Information getInformation(int id) {
         String query = "SELECT * FROM information where id = ?";
-        Object[] args = new Object[]{id};
+        Object[] args = new Object[]{ id };
         return jdbcTemplate.queryForObject(query, new InfoRowMapper(), args);
     }
 
     // 如果查询返回是Standard Java Types, 则不需要使用RowMapper
     public long countInformation() {
         String query = "SELECT count(*) FROM information";
-        return jdbcTemplate.queryForObject(query, Long.class);
+        Long count = jdbcTemplate.queryForObject(query, Long.class);
+        return count == null ? 0: count;
     }
 
     @Override
