@@ -15,7 +15,7 @@ public class JdbcTemplateNameParameterBatch {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    // 使用具名参数完成批量的插入
+    // sql参数表示具有名称的query模板
     public void batchInsert(List<Information> infoList, String sql) {
         SqlParameterSource[] params = SqlParameterSourceUtils.createBatch(infoList);
         jdbcTemplate.batchUpdate(sql, params);
