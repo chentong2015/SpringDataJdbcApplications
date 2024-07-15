@@ -11,8 +11,8 @@ import javax.sql.DataSource;
 @Configuration
 public class DataSourceConfig {
 
-    // TODO: 从配置文件中自动加载配置的信息，完成DataSource的设置 ?allowPublicKeyRetrieval=true?useSSL=false
-    //  如果这里的DataSource连接出错，则会在Spring Boot启动时抛出异常 Connection: Refused
+    // TODO: DriverManagerDataSource使用纯JDBC DriverManager来创建DB的一个连接
+    // DriverManager.getConnection(url, props);
     @Bean
     @Qualifier("mysql-datasource")
     public DataSource dataSource() {
@@ -25,10 +25,10 @@ public class DataSourceConfig {
     }
 
     // TODO. 使用@Qualifier注解来区别注入的同类型bean, 支持不同DataSource
+    // 使用DataSourceBuilder构建DataSource
     @Bean
     @Qualifier("mysql-db2")
     public DataSource dataSource2() {
-        // 使用DataSourceBuilder构建DataSource
         DataSourceBuilder<?> builder = DataSourceBuilder.create();
         builder.url("jdbc:mysql://localhost:3306/dbspringboot");
         return builder.build();
@@ -43,6 +43,14 @@ public class DataSourceConfig {
         dataSource.setPassword("admin");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/my_database");
         return dataSource;
+    }
+
+    // TODO: 推荐使用连接池的实现来配置DataSource
+    @Bean
+    public DataSource dataSourceCP(JdbcProperties jdbcProperties) {
+        // jdbcProperties.getUsername()
+        // jdbcProperties.getPassword()
+        return null;
     }
 }
 
