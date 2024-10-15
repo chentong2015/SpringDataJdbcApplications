@@ -10,8 +10,10 @@
         <module name="spring-data-jpa-hibernate-test" />
         <module name="spring-data-jdbc-template" />
         <module name="demo-spring-data-jpa" />
-        <module name="spring-data-access-test" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-data-access-test" target="15" />
+    </bytecodeTargetLevel>
   </component>
 </project>

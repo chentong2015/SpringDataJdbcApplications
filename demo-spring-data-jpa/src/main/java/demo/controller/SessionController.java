@@ -49,8 +49,7 @@ public class SessionController {
     }
 
     // TODO: 数据在通过body发送到EndPoint时，Jackson将json数据解析成object时
-    //       必须和原始发送数据所对于的object类型字段一致
-    //       和getter & setter方法的自动调用有关
+    //  必须和原始发送数据所对于的object类型字段一致
     // http://localhost:8080/api/v1/sessions/2
     // Row body, Type: JSON
     // {

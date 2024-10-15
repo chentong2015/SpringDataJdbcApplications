@@ -21,8 +21,7 @@ public class UserPageableController {
     // TODO. 执行一个分页查询, 将数据分页返回
     // PageableDefault默认一页返回10个User对象
     @GetMapping("/list/users")
-    public String findAllByNameAndEmail(
-            @PageableDefault(size = 8, sort = {"updateTime"})
+    public String findAllByNameAndEmail(@PageableDefault(size = 8, sort = {"updateTime"})
             Pageable pageable, Model model) {
         model.addAttribute("page", userCrudService.findAllByNameAndEmail(pageable));
         return "success";

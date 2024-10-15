@@ -1,4 +1,4 @@
-package demo.config;
+package demo;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -43,14 +43,6 @@ public class DataSourceConfig {
         dataSource.setPassword("admin");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/my_database");
         return dataSource;
-    }
-
-    // TODO: 推荐使用连接池的实现来配置DataSource
-    @Bean
-    public DataSource dataSourceCP(JdbcProperties jdbcProperties) {
-        // jdbcProperties.getUsername()
-        // jdbcProperties.getPassword()
-        return null;
     }
 }
 
