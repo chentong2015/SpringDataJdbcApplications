@@ -1,0 +1,9 @@
+TODO. Spring Data JPA必须配置DataSource，否则抛出Application启动异常
+Description:
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+Reason: Failed to determine a suitable driver class
+
+- If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+  嵌入式的数据库只能有一个Connection(一个Application Process去连接数据库)
+- If you have database settings to be loaded from a particular profile you may need to activate it.
+  基于不同的Spring Profile来配置不同的DataSource连接

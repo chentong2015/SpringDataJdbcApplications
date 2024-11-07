@@ -11,10 +11,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>demo-spring-data-jpa</module>
-        <module>spring-data-jdbc-template</module>
+        <module>spring-data-jpa-demo</module>
+        <module>spring-jdbc-template</module>
         <module>spring-data-jpa-master</module>
-        <module>spring-data-jpa-hibernate-test</module>
+        <module>spring-data-jpa-hibernate</module>
     </modules>
 
     <properties>

@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-data-jpa-master" />
-        <module name="spring-data-jpa-hibernate-test" />
-        <module name="spring-data-jdbc-template" />
-        <module name="demo-spring-data-jpa" />
+        <module name="spring-jdbc-template" />
+        <module name="spring-data-jpa-hibernate" />
+        <module name="spring-data-jpa-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

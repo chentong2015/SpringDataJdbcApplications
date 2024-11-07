@@ -8,11 +8,12 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
+//
 @Configuration
 public class DataSourceConfig {
 
     // TODO: DriverManagerDataSource使用纯JDBC DriverManager来创建DB的一个连接
-    // DriverManager.getConnection(url, props);
+    // 底层调用DriverManager.getConnection(url, props);来获取数据库连接
     @Bean
     @Qualifier("mysql-datasource")
     public DataSource dataSource() {

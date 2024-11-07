@@ -1,4 +1,4 @@
-package com.spring.data.jpa.entity;
+package com.spring.data.jpa.entity_large;
 
 import org.hibernate.annotations.Type;
 

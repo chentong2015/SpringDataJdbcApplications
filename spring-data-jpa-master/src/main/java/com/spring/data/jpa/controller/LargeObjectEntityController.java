@@ -1,6 +1,6 @@
 package com.spring.data.jpa.controller;
 
-import com.spring.data.jpa.entity.LargeObjectEntity;
+import com.spring.data.jpa.entity_large.LargeObjectEntity;
 import com.spring.data.jpa.repositories.LargeObjectEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
