@@ -8,7 +8,6 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
-//
 @Configuration
 public class DataSourceConfig {
 
