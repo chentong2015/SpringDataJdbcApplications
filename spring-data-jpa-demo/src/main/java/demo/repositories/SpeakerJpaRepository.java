@@ -14,8 +14,10 @@ public interface SpeakerJpaRepository extends JpaRepository<Speaker, Long> {
     // 该方法可以直接写到@Entity上，补充@Query语句
     Speaker findSpeakerBySpecialLastName(String lastName);
 
+    // TODO. Class类名必须使用全路径格式, 反之使用Table名称
     // 自定义执行的方法: 抽象执行的逻辑，传递"具名参数"
-    @Query("select speaker from demo.entity.Speaker speaker where speaker.first_name = :firstName or speaker.last_name = :lastName")
+    @Query("select speaker from demo.entity.Speaker speaker " +
+            "where speaker.first_name = :firstName or speaker.last_name = :lastName")
     Speaker findBySpecialFirstNameAndLastName(@Param("lastName") String firstName, @Param("firstName") String lastName);
 
     // TODO. 声明使用Native Query查询方式, 否则会按照JPQL specification标准

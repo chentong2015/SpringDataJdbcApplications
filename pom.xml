@@ -13,7 +13,7 @@
     <modules>
         <module>spring-data-jpa-demo</module>
         <module>spring-jdbc-template</module>
-        <module>spring-data-jpa-master</module>
+        <module>spring-data-jpa-example</module>
         <module>spring-data-jpa-hibernate</module>
     </modules>
 
@@ -22,5 +22,4 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>

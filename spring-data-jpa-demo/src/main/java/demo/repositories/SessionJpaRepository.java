@@ -15,9 +15,11 @@ import java.util.List;
 @Repository
 public interface SessionJpaRepository extends JpaRepository<Session, Long> {
 
-    // 根据调用是传递的参数，生成HQL查询语句，最终执行指定的SQL
-    // 如果定义的HQL语句是正确的，则编译上不会由任何错误的提升 !!
-    @Query("select s from sessions s where ((s.sessionName = :name and s.session_description like :description%) and s.session_length >= :length)")
+    // 根据调用传递的参数生成HQL查询语句，最终执行指定的SQL
+    // 如果定义的HQL语句是正确的，则编译上没有错误提示
+    @Query("select s from sessions s where (" +
+            "(s.sessionName = :name and s.session_description like :description%) " +
+            "and s.session_length >= :length)")
     List<Session> getSessionsByFilters(@Param("name") String name,
                                        @Param("description") String description,
                                        @Param("length") int length);

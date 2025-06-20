@@ -4,18 +4,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
+// TODO. Note:
 @Configuration
 public class DataSourceConfig {
 
-    // TODO: DriverManagerDataSource使用纯JDBC DriverManager来创建DB的一个连接
+    // TODO: 使用纯JDBC DriverManager来创建DB的一个连接
     // 底层调用DriverManager.getConnection(url, props);来获取数据库连接
     @Bean
     @Qualifier("mysql-datasource")
     public DataSource dataSource() {
+        BadSqlGrammarException
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("root");
@@ -24,7 +27,7 @@ public class DataSourceConfig {
         return dataSource;
     }
 
-    // TODO. 使用@Qualifier注解来区别注入的同类型bean, 支持不同DataSource
+    // TODO. 使用@Qualifier注解来区别同类型bean, 支持不同DataSource
     // 使用DataSourceBuilder构建DataSource
     @Bean
     @Qualifier("mysql-db2")
