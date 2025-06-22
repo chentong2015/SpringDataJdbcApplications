@@ -2,7 +2,7 @@ package demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity(name = "demo.entity.Speaker")

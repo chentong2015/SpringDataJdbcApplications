@@ -1,0 +1,5 @@
+Flyway 10.10 (2024 年)
+支持SQL Server 2008 - SQL Server 20225(含16.0版本, 即SQL Server 2022)
+
+Flyway 使用sqlcmd或JDBC来连接SQL Server
+只要使用支持SQL Server 16.0的JDBC驱动(比如 Microsoft JDBC Driver 12.4+)
