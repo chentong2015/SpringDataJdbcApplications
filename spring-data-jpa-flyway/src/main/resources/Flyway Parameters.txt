@@ -1,0 +1,25 @@
+定义执行Query的路径位置
+spring.flyway.locations=classpath:db/sqlserver
+
+定义是否激活DB的UPGRADE更新
+spring.flyway.enabled=${database.upgrade.enabled:false}
+
+定义占位符批量替代变量
+spring.flyway.placeholders.domain=${database.domain.full-prefix:}
+spring.flyway.placeholders.table-domain=${database.domain.full-prefix:}
+spring.flyway.placeholders.ts-data=${database.tablespace.data:}
+spring.flyway.placeholders.ts-index=${database.tablespace.index:}
+
+指定Flyway用于记录迁移历史的版本控制表名
+spring.flyway.table=${database.domain.full-prefix:}schema_version
+
+指定Flyway应用的schema(适用于Oracle, PostgreSQL多schema场景)
+spring.flyway.schemas=${database.schema:}
+
+禁止Flyway.clean()操作, 保护措施, 防止将数据库清空(尤其是生产环境)
+spring.flyway.cleanDisabled=true
+
+让Flyway忽略所有migration文件的模式匹配检查。
+*:* 表示忽略所有版本号和描述(即不会因重复、非法命名报错)
+这可能掩盖Flyway迁移中的问题, 适合开发阶段, 生产建议指定更具体的匹配
+spring.flyway.ignoreMigrationPatterns=*:*
