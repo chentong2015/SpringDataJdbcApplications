@@ -12,9 +12,9 @@
 
     <modules>
         <module>spring-data-jpa-demo</module>
-        <module>spring-jdbc-template</module>
         <module>spring-data-jpa-example</module>
         <module>spring-data-jpa-hibernate</module>
+        <module>spring-jdbc-template</module>
     </modules>
 
     <properties>
