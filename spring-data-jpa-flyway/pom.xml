@@ -21,21 +21,33 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.4.5</version>
+            <version>3.3.6</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>3.4.5</version>
+            <version>3.3.6</version>
         </dependency>
 
-        <!-- Flyway和DB版本之间存在兼容性问题 -->
+        <!-- TODO. 注意Flyway和DB版本之间兼容性问题
+         Flyway 10.10支持SQL Server 2008-2025
+         JDBC驱动需要支持特定的SQL Server版本 -->
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 			<version>10.10.0</version>
 		</dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-sqlserver</artifactId>
+            <version>10.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.4.2.jre11</version>
+        </dependency>
 
         <!-- Flyway依赖于Jackson -->
 		<dependency>
@@ -43,12 +55,5 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.18.2</version>
 		</dependency>
-
-        <!-- 注意JDBC兼容的版本 -->
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>12.4.2.jre11</version>
-        </dependency>
     </dependencies>
 </project>
