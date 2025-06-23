@@ -15,8 +15,6 @@
         <module>spring-jdbc-template</module>
         <module>spring-data-jpa-example</module>
         <module>spring-data-jpa-hibernate</module>
-        <module>spring-data-jpa-flyway</module>
-        <module>spring-data-jpa-hikaricp</module>
     </modules>
 
     <properties>

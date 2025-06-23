@@ -10,9 +10,11 @@
         <module name="spring-data-jpa-hibernate" />
         <module name="spring-data-jpa-example" />
         <module name="spring-data-jpa-demo" />
-        <module name="spring-data-jpa-flyway" />
-        <module name="spring-data-jpa-hikaricp" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-data-jpa-flyway" target="17" />
+      <module name="spring-data-jpa-hikaricp" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
