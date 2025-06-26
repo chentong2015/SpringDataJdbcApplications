@@ -1,4 +1,4 @@
-package com.example.main.config;
+package com.example.main;
 
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-public class HibernateConfig {
+public class HibernateConfiguration {
     
     // @Bean
     public LocalSessionFactoryBean sessionFactory() {
@@ -28,6 +28,7 @@ public class HibernateConfig {
         return null;
     }
 
+    // TODO. hibernate.dialect属于Hibernate原始的属性配置
     // @Bean
     public Properties hibernateProperties() {
         Properties properties = new Properties();

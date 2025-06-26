@@ -9,7 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-public class SpringBootMasterConfig {
+public class SpringDataConfiguration {
 
     @Bean
     public DataSource dataSource() {

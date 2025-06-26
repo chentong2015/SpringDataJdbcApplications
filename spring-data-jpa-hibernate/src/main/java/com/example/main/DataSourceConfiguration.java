@@ -1,16 +1,14 @@
-package com.example.main.config;
+package com.example.main;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
 @Configuration
-// @PropertySource(value = "classpath:data.properties")
-public class ApplicationConfig {
+public class DataSourceConfiguration {
 
-    @Bean
+    // @Bean
     public DataSource getAnotherDatasource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         // dataSource.setDriverClassName("org.postgresql.Driver");

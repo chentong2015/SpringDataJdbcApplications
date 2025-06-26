@@ -16,14 +16,14 @@ import org.springframework.stereotype.Repository;
 import java.util.Properties;
 
 @Repository
-public class MyHibernateServiceInitiator implements MyServiceInitiator {
+public class ServiceInitiatorImpl implements IServiceInitiator {
 
     private BootstrapServiceRegistry bootstrapServiceRegistry;
     private StandardServiceRegistryBuilder standardServiceRegistryBuilder;
     private MetadataSources metadataSources = new MetadataSources();
     private Metadata metadata;
 
-    public MyHibernateServiceInitiator() {
+    public ServiceInitiatorImpl() {
         this.metadata = getMetadata();
         SessionFactory sessionFactory = metadata.buildSessionFactory();
         System.out.println(sessionFactory.toString());
