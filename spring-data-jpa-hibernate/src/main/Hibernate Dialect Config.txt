@@ -1,5 +1,7 @@
-TODO.
+TODO. 指定JPA使用的数据库平台方言, 底层会设置hibernate.dialect
+ Spring Data Jpa 推荐的配置方式, 简洁明确
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 
-TODO.
+TODO. 显式传递Hibernate原生配置, 属性会被设置到hibernateProperties
+ 更底层方式, 适合properties细粒度控制或者代码层面配置
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
