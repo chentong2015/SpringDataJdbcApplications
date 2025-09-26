@@ -1,11 +1,16 @@
 package com.jdbc.template.template;
 
+import com.jdbc.template.template.model.InfoRowMapper;
+import com.jdbc.template.template.model.Information;
+import com.jdbc.template.template.model.InformationDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 
+// TODO. JdbcTemplate标准用法
+// jdbcTemplate.query(query, RowMapper, arg1, arg2)
 @Repository("baseJdbcTemplate")
 public class JdbcTemplateBase implements InformationDao {
 

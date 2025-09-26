@@ -1,4 +1,4 @@
-package com.jdbc.template.template;
+package com.jdbc.template.template.model;
 
 public interface InformationDao {
 

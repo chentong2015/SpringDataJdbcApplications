@@ -1,4 +1,4 @@
-package com.jdbc.template.template;
+package com.jdbc.template.template.model;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.JdbcUtils;

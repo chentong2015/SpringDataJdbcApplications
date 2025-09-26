@@ -1,5 +1,8 @@
 package com.jdbc.template.template;
 
+import com.jdbc.template.template.model.InfoRowMapper;
+import com.jdbc.template.template.model.Information;
+import com.jdbc.template.template.model.InformationDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
