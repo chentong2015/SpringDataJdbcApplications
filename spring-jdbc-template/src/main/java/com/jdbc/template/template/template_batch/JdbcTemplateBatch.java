@@ -1,6 +1,6 @@
-package com.jdbc.template.template.batch;
+package com.jdbc.template.template.template_batch;
 
-import com.jdbc.template.template.model.Information;
+import com.jdbc.template.template.Information;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 

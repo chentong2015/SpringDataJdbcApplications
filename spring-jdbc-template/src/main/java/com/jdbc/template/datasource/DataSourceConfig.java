@@ -1,4 +1,4 @@
-package com.jdbc.template;
+package com.jdbc.template.datasource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

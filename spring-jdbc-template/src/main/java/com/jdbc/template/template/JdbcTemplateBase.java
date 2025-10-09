@@ -1,9 +1,8 @@
 package com.jdbc.template.template;
 
-import com.jdbc.template.template.model.InfoRowMapper;
-import com.jdbc.template.template.model.Information;
-import com.jdbc.template.template.model.InformationDao;
+import com.jdbc.template.template.mapper.InfoRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -21,8 +20,7 @@ public class JdbcTemplateBase implements InformationDao {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    // 执行操作时，jdbcTemplate会将所有的参数依次替换query中的?
-    // Return the number of rows affected
+    // TODO. 更新数据时提供Object依次替换占位符的值
     @Override
     public boolean insertInformation(Information info) {
         String query = "INSERT INTO information (id, name, place, year) VALUES (?, ?, ?, ?)";
@@ -30,7 +28,7 @@ public class JdbcTemplateBase implements InformationDao {
         return jdbcTemplate.update(query, args) == 1;
     }
 
-    // 查询数据时，需要提供自定义的RowMapper，将查询出来的ResultSet映射成指定类型的对象实例
+    // TODO. 查询数据时需要提供自定义的RowMapper: 将查询ResultSet映射成指定类型的实例
     @Override
     public Information getInformation(int id) {
         String query = "SELECT * FROM information where id = ?";
@@ -38,7 +36,15 @@ public class JdbcTemplateBase implements InformationDao {
         return jdbcTemplate.queryForObject(query, new InfoRowMapper(), args);
     }
 
-    // 如果查询返回是Standard Java Types, 则不需要使用RowMapper
+    // TODO. 直接适用默认类型的RowMapper<>: 默认将查询结果映射生成Object对象
+    @Override
+    public Information getInformationTest(int id) {
+        String query = "SELECT * FROM information where id = ?";
+        Object[] args = new Object[]{ id };
+        return jdbcTemplate.queryForObject(query, args, new BeanPropertyRowMapper<>(Information.class));
+    }
+
+    // 如果查询返回是Java Types则不需要使用RowMapper
     public long countInformation() {
         String query = "SELECT count(*) FROM information";
         Long count = jdbcTemplate.queryForObject(query, Long.class);

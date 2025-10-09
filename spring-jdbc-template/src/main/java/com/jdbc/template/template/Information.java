@@ -1,4 +1,4 @@
-package com.jdbc.template.template.model;
+package com.jdbc.template.template;
 
 public class Information {
 

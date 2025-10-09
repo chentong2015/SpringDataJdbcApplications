@@ -1,6 +1,6 @@
 package com.jdbc.template.controller;
 
-import com.jdbc.template.template.model.Information;
+import com.jdbc.template.template.Information;
 import com.jdbc.template.template.JdbcTemplateBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
