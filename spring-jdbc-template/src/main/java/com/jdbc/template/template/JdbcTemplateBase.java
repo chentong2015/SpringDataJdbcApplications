@@ -46,7 +46,6 @@ public class JdbcTemplateBase {
     }
 
     public void cleanupTable() {
-        // 只清空table中所有信息，只写一次日志记录
         String query = "TRUNCATE TABLE information";
         jdbcTemplate.execute(query);
     }

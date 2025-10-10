@@ -1,8 +1,8 @@
-package com.jdbc.template.utils;
+package com.jdbc.template.template_utils;
 
-import com.jdbc.template.utils.model.Column;
-import com.jdbc.template.utils.model.MapSqlParameterSourceBuilder;
-import com.jdbc.template.utils.model.CustomSqlParameterSourceBuilder;
+import com.jdbc.template.template_utils.model.Column;
+import com.jdbc.template.template_utils.model.MapSqlParameterSourceBuilder;
+import com.jdbc.template.template_utils.model.CustomSqlParameterSourceBuilder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +10,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+// TODO. 自定义API: 返回构建好的MapSqlParameterSource对象
+// JdbcTemplateUtils.getSqlParameterSourceBuilder(getNamedParameterMap())
+//    .add(FmmPatchListColumn.ID, item.getId())
+//    .add(FmmPatchListColumn.TYPE, item.getType().num())
+//    .add(column, object)
+//    .build()
 public class JdbcTemplateUtils {
 
     private static final String OR = " OR ";
@@ -17,12 +23,6 @@ public class JdbcTemplateUtils {
     private static final String UNDERSCORE = "_";
     private static final String COLON = ":";
 
-    // TODO. 实现的效果: 返回构建好的MapSqlParameterSource对象
-    // JdbcTemplateUtils.getSqlParameterSourceBuilder(getNamedParameterMap())
-    //    .add(FmmPatchListColumn.ID, item.getId())
-    //    .add(FmmPatchListColumn.TYPE, item.getType().num())
-    //    .add(column, object)
-    //    .build()
     public static CustomSqlParameterSourceBuilder getSqlParameterSourceBuilder(Map<String, String> namedParameterMap) {
         return new MapSqlParameterSourceBuilder(namedParameterMap);
     }

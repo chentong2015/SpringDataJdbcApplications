@@ -17,23 +17,24 @@ public class JdbcTemplateBatch {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    // 1. 设置PreparedStatement的参数
-    // 2. 传递list列表序列的参数并批量执行相同的SQL
+    // TODO. 使用StatementSetter构造Query并批量执行
     public int[] batchUpdate(List<Information> infoList) {
-        return this.jdbcTemplate.batchUpdate(
-                "INSERT INTO information (id, name, place, year) VALUES (?, ?, ?, ?)",
-                new BatchPreparedStatementSetter() {
-                    public void setValues(PreparedStatement ps, int i) throws SQLException {
-                        Information information = infoList.get(i);
-                        ps.setInt(1, information.getId());
-                        ps.setString(2, information.getName());
-                        ps.setString(3, information.getPlace());
-                        ps.setInt(4, information.getYear());
-                    }
+        String query = "INSERT INTO information (id, name, place, year) " +
+                "VALUES (?, ?, ?, ?)";
+        BatchPreparedStatementSetter statementSetter = new BatchPreparedStatementSetter() {
+            public void setValues(PreparedStatement ps, int i) throws SQLException {
+                Information information = infoList.get(i);
+                ps.setInt(1, information.getId());
+                ps.setString(2, information.getName());
+                ps.setString(3, information.getPlace());
+                ps.setInt(4, information.getYear());
+            }
 
-                    public int getBatchSize() {
-                        return infoList.size();
-                    }
-                });
+            public int getBatchSize() {
+                return infoList.size();
+            }
+        };
+
+        return this.jdbcTemplate.batchUpdate(query, statementSetter);
     }
 }

@@ -6,17 +6,17 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import javax.sql.DataSource;
 import java.util.List;
 
-public class JdbcTemplateQuery {
+public class JdbcTemplateMapper {
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
-    public JdbcTemplateQuery(DataSource dataSource) {
+    public JdbcTemplateMapper(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
-    // TODO. 使用Lambda表达式来实现RowMapper列的映射, 取值到List列表
+    // TODO. 使用Lambda表达式实现RowMapper列的映射(取值到List列表)
     public boolean hasFoundRecordsByOrigin(String origin) {
-        String sql = "SELECT 1 FROM FOFUTI_MAIN WHERE ORIGIN = :origin";
+        String sql = "SELECT 1 FROM MAIN WHERE ORIGIN = :origin";
         MapSqlParameterSource params = new MapSqlParameterSource("origin", origin);
         List<Integer> results = this.jdbcTemplate.query(sql, params,
                 (rs, rowNum) -> rs.getInt(1));

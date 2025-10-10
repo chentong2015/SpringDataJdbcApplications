@@ -1,6 +1,6 @@
-package com.jdbc.template.utils.model;
+package com.jdbc.template.template_utils.model;
 
-import com.jdbc.template.utils.JdbcTemplateUtils;
+import com.jdbc.template.template_utils.JdbcTemplateUtils;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 
 import java.util.HashMap;

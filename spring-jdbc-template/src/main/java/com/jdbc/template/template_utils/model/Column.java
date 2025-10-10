@@ -1,4 +1,4 @@
-package com.jdbc.template.utils.model;
+package com.jdbc.template.template_utils.model;
 
 public interface Column {
 
