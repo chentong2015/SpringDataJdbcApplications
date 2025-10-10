@@ -1,6 +1,5 @@
-package com.jdbc.template.template.mapper;
+package com.jdbc.template.template;
 
-import com.jdbc.template.template.Information;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.JdbcUtils;
 

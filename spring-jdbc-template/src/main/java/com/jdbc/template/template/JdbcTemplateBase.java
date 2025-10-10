@@ -1,6 +1,5 @@
 package com.jdbc.template.template;
 
-import com.jdbc.template.template.mapper.InfoRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,10 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 
-// TODO. JdbcTemplate标准用法
-// jdbcTemplate.query(query, RowMapper, arg1, arg2)
 @Repository("baseJdbcTemplate")
-public class JdbcTemplateBase implements InformationDao {
+public class JdbcTemplateBase {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -21,7 +18,6 @@ public class JdbcTemplateBase implements InformationDao {
     }
 
     // TODO. 更新数据时提供Object依次替换占位符的值
-    @Override
     public boolean insertInformation(Information info) {
         String query = "INSERT INTO information (id, name, place, year) VALUES (?, ?, ?, ?)";
         Object[] args = new Object[]{info.getId(), info.getName(), info.getPlace(), info.getYear()};
@@ -29,7 +25,6 @@ public class JdbcTemplateBase implements InformationDao {
     }
 
     // TODO. 查询数据时需要提供自定义的RowMapper: 将查询ResultSet映射成指定类型的实例
-    @Override
     public Information getInformation(int id) {
         String query = "SELECT * FROM information where id = ?";
         Object[] args = new Object[]{ id };
@@ -37,7 +32,6 @@ public class JdbcTemplateBase implements InformationDao {
     }
 
     // TODO. 直接适用默认类型的RowMapper<>: 默认将查询结果映射生成Object对象
-    @Override
     public Information getInformationTest(int id) {
         String query = "SELECT * FROM information where id = ?";
         Object[] args = new Object[]{ id };
@@ -51,7 +45,6 @@ public class JdbcTemplateBase implements InformationDao {
         return count == null ? 0: count;
     }
 
-    @Override
     public void cleanupTable() {
         // 只清空table中所有信息，只写一次日志记录
         String query = "TRUNCATE TABLE information";

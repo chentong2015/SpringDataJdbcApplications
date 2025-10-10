@@ -1,4 +1,4 @@
-package com.jdbc.template.template.template_batch;
+package com.jdbc.template.template_batch;
 
 import com.jdbc.template.template.Information;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;

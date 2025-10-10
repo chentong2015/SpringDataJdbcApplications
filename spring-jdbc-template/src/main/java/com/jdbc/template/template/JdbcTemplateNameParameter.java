@@ -1,6 +1,5 @@
 package com.jdbc.template.template;
 
-import com.jdbc.template.template.mapper.InfoRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -15,7 +14,7 @@ import java.util.Map;
 // TODO. SpringNamedParameterJdbcTemplate
 // 使用具名参数替代传统的placeholder'?', 解决可读性和参数顺序问题
 @Repository("baseNamedParameterJdbcTemplate")
-public class JdbcTemplateNameParameter implements InformationDao {
+public class JdbcTemplateNameParameter {
 
     private NamedParameterJdbcTemplate template;
 
@@ -25,7 +24,6 @@ public class JdbcTemplateNameParameter implements InformationDao {
     }
 
     // TODO. BeanPropertySqlParameterSource 从指定Java对象中获取具名参数值, 属性和参数名称必须一致
-    @Override
     public boolean insertInformation(Information info) {
         SqlParameterSource beanParams = new BeanPropertySqlParameterSource(info);
         String sqlQuery = "INSERT INTO information (id, name, place, year) " +
@@ -34,7 +32,6 @@ public class JdbcTemplateNameParameter implements InformationDao {
     }
 
     // TODO. MapSqlParameterSource 根据映射名称获取具名参数值
-    @Override
     public Information getInformation(int id) {
         SqlParameterSource params = new MapSqlParameterSource("ID", id);
         String sqlQuery = "SELECT * FROM information where id = :ID";
@@ -42,7 +39,6 @@ public class JdbcTemplateNameParameter implements InformationDao {
     }
 
     // TODO. MapSqlParameterSource 从Map映射表中获取具名参数值
-    @Override
     public Information getInformationTest(int id) {
         Map<String, Object> values = new HashMap<>();
         values.put("ID", id);
@@ -51,7 +47,6 @@ public class JdbcTemplateNameParameter implements InformationDao {
         return template.queryForObject(sqlQuery, params, new InfoRowMapper());
     }
 
-    @Override
     public void cleanupTable() {
         String sqlQuery = "TRUNCATE TABLE information";
         template.getJdbcOperations().execute(sqlQuery);
