@@ -1,4 +1,4 @@
-package com.example.main;
+package com.example.main.config;
 
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.context.annotation.Configuration;

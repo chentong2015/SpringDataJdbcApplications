@@ -8,8 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-jdbc-template" />
         <module name="spring-data-jpa-hibernate" />
-        <module name="spring-data-jpa-example" />
-        <module name="spring-data-jpa-demo" />
+        <module name="spring-data-jpa-core" />
+        <module name="spring-data-jpa-test" />
+        <module name="spring-data-jpa-pageable" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -1,4 +1,4 @@
-package com.example.main;
+package com.example.main.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
