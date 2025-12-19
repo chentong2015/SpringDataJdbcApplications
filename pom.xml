@@ -14,7 +14,7 @@
         <module>jdbc-template</module>
         <module>spring-data-jpa-core</module>
         <module>spring-data-jpa-hibernate</module>
-        <module>spring-data-jpa-test</module>
+        <module>spring-data-jpa-feature</module>
     </modules>
 
     <properties>
