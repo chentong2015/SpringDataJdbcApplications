@@ -11,11 +11,10 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>jdbc-template</module>
         <module>spring-data-jpa-core</module>
         <module>spring-data-jpa-hibernate</module>
-        <module>spring-data-jpa-pageable</module>
         <module>spring-data-jpa-test</module>
-        <module>spring-jdbc-template</module>
     </modules>
 
     <properties>
