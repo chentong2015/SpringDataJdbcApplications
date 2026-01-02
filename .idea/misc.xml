@@ -11,6 +11,7 @@
       <set>
         <option value="$PROJECT_DIR$/jdbc-templates/pom.xml" />
         <option value="$PROJECT_DIR$/spring-data-jpa-hikaricp/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-data-jpa-pageable/pom.xml" />
       </set>
     </option>
   </component>
