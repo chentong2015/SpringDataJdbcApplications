@@ -13,9 +13,8 @@
     <modules>
         <module>jdbc-template</module>
         <module>spring-data-jpa-core</module>
-        <module>spring-data-jpa-hibernate</module>
         <module>spring-data-jpa-feature</module>
-        <module>spring-data-jpa-pageable</module>
+        <module>spring-data-jpa-hibernate</module>
     </modules>
 
     <properties>

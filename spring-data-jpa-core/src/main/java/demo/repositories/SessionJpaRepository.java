@@ -27,5 +27,4 @@ public interface SessionJpaRepository extends JpaRepository<Session, Long> {
     // 推荐直接使用Native Query来调用CAST()方法
     @Query(value = "select s from sessions s where (CAST(:startTime as date) is null)", nativeQuery = true)
     List<Session> getSessionByDates(@Nullable @Param("startTime") ZonedDateTime startTime);
-
 }
