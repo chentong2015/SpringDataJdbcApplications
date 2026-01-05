@@ -1,18 +1,16 @@
 package demo.controller;
 
 import demo.entity.User;
-import demo.repositories.UserCrudRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import demo.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
 
-    private final UserCrudRepository userRepository;
+    private final UserService userService;
 
-    @Autowired
-    public UserController(UserCrudRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     // http://localhost:8080/user/create?email=[email]&name=[name]
@@ -21,7 +19,7 @@ public class UserController {
         String userId = "";
         try {
             User user = new User(email, name);
-            userRepository.save(user);
+            this.userService.save(user);
             userId = String.valueOf(user.getId());
         } catch (Exception ex) {
             return "Error" + ex.getMessage();

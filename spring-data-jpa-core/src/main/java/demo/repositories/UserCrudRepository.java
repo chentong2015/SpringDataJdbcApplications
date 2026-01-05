@@ -1,6 +1,7 @@
 package demo.repositories;
 
 import demo.entity.User;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -8,15 +9,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+// Transactional标明Repo中所有方法都将以事务的方式执行
+// JpaSpecification提供特定的Specification条件查询特征
 @Repository
-@Transactional // 标明该Repository中的所有方法都将以事务的方式执行
-public interface UserCrudRepository extends CrudRepository<User, Long> {
+@Transactional
+public interface UserCrudRepository extends CrudRepository<User, Long>, JpaSpecificationExecutor<User> {
 
-    /**
-     * This method will find a User instance in the database by its email.
-     * Note that this method is not implemented and its working code will be
-     * automagically generated from its signature by Spring Data JPA.
-     */
+    // Spring Data JPA 自动为接口方法生成Proxy Impl实现查询逻辑
     User findByEmail(String email);
 
     // 提供参数实现模糊查询
