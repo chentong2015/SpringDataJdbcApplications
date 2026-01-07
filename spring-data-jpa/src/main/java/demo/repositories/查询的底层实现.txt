@@ -1,0 +1,3 @@
+TODO. JpaRepository接口方法如何被实现的 ?
+
+Spring Data JPA 自动为接口方法生成Proxy Impl实现查询逻辑
