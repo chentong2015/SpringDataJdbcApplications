@@ -1,0 +1,10 @@
+Spring Data JPA构建在JPA API和Hibernate API之上
+- 完全取消hibernate config配置文件和.hbm.xml隐射文件
+- 支持直接使用JPA注解完成ORM映射配置
+
+TODO. Spring Data JPA 依赖DataSource启动
+Description:
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+Reason: Failed to determine a suitable driver class
+- If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+- If you have database settings to be loaded from a particular profile you may need to activate it.
