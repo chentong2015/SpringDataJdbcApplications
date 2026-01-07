@@ -34,3 +34,6 @@ public EntityManagerFactoryBuilder entityManagerFactoryBuilder(JpaVendorAdapter 
 public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder factoryBuilder,,) {
     return factoryBuilder.dataSource(this.dataSource),,,.build();
 }
+
+TODO. 依赖注入获取时调用EntityManager的创建方法
+SharedEntityManagerCreator.createSharedEntityManager(...)
