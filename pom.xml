@@ -12,9 +12,10 @@
 
     <modules>
         <module>jdbc-template</module>
-        <module>spring-data-jpa-core</module>
+        <module>spring-data-jpa</module>
+        <module>spring-data-jpa-entitymanager</module>
         <module>spring-data-jpa-feature</module>
-        <module>spring-data-jpa-hibernate</module>
+        <module>spring-data-jpa-test</module>
     </modules>
 
     <properties>

@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-data-jpa" />
         <module name="spring-data-jpa-feature" />
-        <module name="spring-data-jpa-hibernate" />
-        <module name="spring-data-jpa-core" />
-        <module name="spring-data-jpa-test" />
+        <module name="spring-data-jpa-entitymanager" />
         <module name="jdbc-template" />
+        <module name="spring-data-jpa-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
