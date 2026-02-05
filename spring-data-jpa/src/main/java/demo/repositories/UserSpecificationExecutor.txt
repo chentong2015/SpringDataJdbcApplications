@@ -1,0 +1,20 @@
+TODO. JpaSpecification 根据特定Specification条件进行查询
+
+// 实现以下接口则为Repo添加特定查询方法
+public interface JpaSpecificationExecutor<T> {
+    Optional<T> findOne(Specification<T> spec);
+
+    List<T> findAll(@Nullable Specification<T> spec);
+
+    Page<T> findAll(@Nullable Specification<T> spec, Pageable pageable);
+
+    List<T> findAll(@Nullable Specification<T> spec, Sort sort);
+
+    long count(@Nullable Specification<T> spec);
+
+    boolean exists(Specification<T> spec);
+
+    long delete(@Nullable Specification<T> spec);
+
+    <S extends T, R> R findBy(Specification<T> spec, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction);
+}

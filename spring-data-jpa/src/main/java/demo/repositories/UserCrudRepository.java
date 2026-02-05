@@ -11,17 +11,16 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-// JpaSpecification 提供特定的Specification条件查询特征
 @Repository
 public interface UserCrudRepository extends CrudRepository<User, Long>, JpaSpecificationExecutor<User> {
 
     // 默认的查询与特定的方法名称一致
     User findByEmail(String email);
 
-    // 提供特殊的匹配判断条件Specification来进行查询
+    // 提供特殊查询条件Specification来查询结果
     List<User> findAll(Specification<User> spec);
 
-    // Spring Data JPA 将优化标注Modifying注解的查询
+    // Modifying注解针对数据更待，标注后该查询语句将被优化
     @Modifying(clearAutomatically = true)
     void deleteUserByEmail(String email);
 

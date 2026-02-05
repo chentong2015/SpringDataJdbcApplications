@@ -1,10 +1,8 @@
 事务在具体执行时依然遵守数据库事务隔离级别的设置
 
-TODO. 代码级别基于AOP来实现
-Spring为标记@Transactional注解的类型(或方法)创建代理
+TODO. 基于AOP实现: 使用Cglib创建继承类(Proxy代理类)来执行对数据库的请求操作
 Spring creates proxies for all classes annotated with @Transactional on class or any methods
 
-使用Cglib创建继承类(Proxy代理类)来执行对数据库的请求操作 => 区别JDK通过接口来实现
 class DemoTransactionProxy extends DemoTransactionClass {
     DemoTransactionClass target;
 

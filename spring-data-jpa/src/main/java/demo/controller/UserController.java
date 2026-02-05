@@ -1,29 +1,30 @@
 package demo.controller;
 
 import demo.entity.User;
-import demo.services.UserService;
+import demo.services.UserSpecificationService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class UserController {
 
-    private final UserService userService;
+    private final UserSpecificationService userService;
 
-    public UserController(UserService userService) {
+    public UserController(UserSpecificationService userService) {
         this.userService = userService;
     }
 
-    // http://localhost:8080/user/create?email=[email]&name=[name]
-    @RequestMapping("/user/create")
-    public String create(String email, String name) {
-        String userId = "";
-        try {
-            User user = new User(email, name);
-            this.userService.save(user);
-            userId = String.valueOf(user.getId());
-        } catch (Exception ex) {
-            return "Error" + ex.getMessage();
-        }
-        return "Create user with id = " + userId;
+    // http://localhost:8080/user/creation?email=[email]&name=[name]
+    @PostMapping("/user/creation")
+    public String create(@RequestParam("email") String email, @RequestParam("name") String name) {
+        User user = new User(email, name);
+        this.userService.save(user);
+        return "Create user with id = " + user.getId();
+    }
+
+    @GetMapping("/user/{name}")
+    public List<User> findByNameLike(@PathVariable("name") String name) {
+        return this.userService.getUsersByNameLike(name);
     }
 }
