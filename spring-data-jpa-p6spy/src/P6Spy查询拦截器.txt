@@ -1,0 +1,8 @@
+TODO. 使用第三方类库来拦截JPA Query查询
+- 显示完整Query语句, 直接拷贝执行
+- 分析Query语句的性能优化
+
+P6Spy: open-source, datasource-proxy, free library for intercepting SQL logs
+
+https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
+https://p6spy.readthedocs.io/en/latest/configandusage.html

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$APPLICATION_HOME_DIR$/bin/src/main/java" charset="UTF-8" />
+    <file url="file://$APPLICATION_HOME_DIR$/bin/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jdbc-template/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jdbc-template/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jdbc-templates/src/main/java" charset="UTF-8" />
@@ -15,6 +17,8 @@
     <file url="file://$PROJECT_DIR$/spring-data-jpa-flyway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-data-jpa-hikaricp/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-data-jpa-hikaricp/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-data-jpa-p6spy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-data-jpa-p6spy/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-data-jpa-pageable/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-data-jpa-pageable/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-data-jpa-test/src/main/java" charset="UTF-8" />

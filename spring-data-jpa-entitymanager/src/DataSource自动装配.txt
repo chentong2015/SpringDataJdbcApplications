@@ -1,0 +1,14 @@
+TODO. 只要容器中存在DataSource
+Spring Boot 自动创建EntityManagerFactory和EntityManager，并将其注册为可注入的Bean
+
+Spring Boot AutoConfigure 通过自动装配引入
+    spring-boot-autoconfigure-3.5.8.jar
+      META-INF/spring/
+        └── org.springframework.boot.autoconfigure.AutoConfiguration.imports
+               org.springframework.boot.hibernate.autoconfigure.HibernateJpaAutoConfiguration
+
+    spring-boot-autoconfigure-4.0.0.jar
+    spring-boot-hibernate-4.0.0.jar
+       META-INF/spring/
+           └── org.springframework.boot.autoconfigure.AutoConfiguration.imports
+                  org.springframework.boot.hibernate.autoconfigure.HibernateJpaAutoConfiguration

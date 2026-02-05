@@ -9,6 +9,7 @@
         <module name="spring-data-jpa" />
         <module name="spring-data-jpa-feature" />
         <module name="spring-data-jpa-entitymanager" />
+        <module name="spring-data-jpa-p6spy" />
         <module name="jdbc-template" />
         <module name="spring-data-jpa-test" />
       </profile>
