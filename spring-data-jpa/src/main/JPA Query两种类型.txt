@@ -1,7 +1,0 @@
-TODO. @Query()
-针对JPA的查询语句(底层翻译成SQL)，查询基于Entity Name实体对象
-如果定义的JPQL/HQL语句正确，则编译上没有错误提示
-
-TODO. @Query(,nativeQuery = true)
-原生SQL查询语句，查询基于Table Name表
-原生SQL查询通常包含特定的Function可以调用，比如CAST( to )针对时间的处理

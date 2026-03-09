@@ -1,2 +1,0 @@
-TODO. JpaRepository接口方法如何被实现 ?
-Spring Data JPA 自动为接口生成Proxy Impl类型实现接口中方法
