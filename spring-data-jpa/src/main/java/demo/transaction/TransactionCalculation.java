@@ -1,6 +1,7 @@
 package demo.transaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class TransactionCalculation {
 
     // TODO: 解决方案，注入自己在容器中的代理对象，完成调用
+    @Lazy
     @Autowired
     private TransactionCalculation calculation;
 
@@ -26,7 +28,7 @@ public class TransactionCalculation {
         calculation.runInnerMethod();
     }
 
-    // TODO: 在调用方法的时候，如果是原始对象在调用，则事务传播的设置不会生效 !!
+    // TODO: 调用方法时，如果是原始对象在调用，则事务传播的设置不会生效 !!
     @Transactional(propagation = Propagation.NEVER)
     public void runInnerMethod() {
         System.out.println("test inner method");

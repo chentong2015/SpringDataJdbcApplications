@@ -1,7 +1,7 @@
 package demo.controller;
 
 import demo.entity.Session;
-import demo.repositories.SessionJpaRepository;
+import demo.repository.SessionJpaRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

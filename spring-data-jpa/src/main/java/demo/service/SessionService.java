@@ -1,4 +1,4 @@
-package demo.services;
+package demo.service;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -14,8 +14,8 @@ public class SessionService {
     private DataSource datasource2;
 
     // TODO. 使用@Qualifier名称来区别使用不同的DataSource
-    public SessionService(@Qualifier("mysql-datasource") DataSource datasource1,
-                          @Qualifier("psql-datasource") DataSource datasource2) {
+    public SessionService(@Qualifier("datasource-oracle") DataSource datasource1,
+                          @Qualifier("datasource-oracle") DataSource datasource2) {
         this.datasource1 = datasource1;
         this.datasource2 = datasource2;
     }

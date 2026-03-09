@@ -1,7 +1,7 @@
-package demo.services;
+package demo.service;
 
 import demo.entity.User;
-import demo.repositories.UserCrudRepository;
+import demo.repository.UserCrudRepository;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
 import jakarta.persistence.criteria.Subquery;

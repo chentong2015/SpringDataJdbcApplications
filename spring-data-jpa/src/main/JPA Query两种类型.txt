@@ -5,7 +5,3 @@ TODO. @Query()
 TODO. @Query(,nativeQuery = true)
 原生SQL查询语句，查询基于Table Name表
 原生SQL查询通常包含特定的Function可以调用，比如CAST( to )针对时间的处理
-
-
-TODO. JpaRepository接口方法如何被实现的 ?
-Spring Data JPA 自动为接口方法生成Proxy Impl实现查询逻辑

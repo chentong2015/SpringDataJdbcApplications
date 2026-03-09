@@ -1,4 +1,4 @@
-package demo.repositories;
+package demo.repository;
 
 import demo.entity.Speaker;
 import org.springframework.data.jpa.repository.JpaRepository;
