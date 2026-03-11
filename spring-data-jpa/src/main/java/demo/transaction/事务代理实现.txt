@@ -1,7 +1,7 @@
 TODO. 基于AOP实现: 使用Cglib创建继承类(Proxy代理类)来执行对数据库请求
 Spring creates proxies for all classes annotated with @Transactional on class or any methods
 
-// 事务在具体库执行时依然遵守数据事务隔离级别的设置
+TODO. 事务在执行时依然遵守数据事务隔离级别
 class DemoTransactionProxy extends DemoTransactionClass {
     DemoTransactionClass target;
 

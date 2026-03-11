@@ -1,4 +1,4 @@
-package demo.repository_cycle;
+package demo.repository.cycle;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

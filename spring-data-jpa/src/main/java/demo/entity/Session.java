@@ -33,9 +33,7 @@ public class Session {
             inverseJoinColumns = @JoinColumn(name = "speaker_id"))
     private List<Speaker> speakers;
 
-    public Session() {
-
-    }
+    public Session() {}
 
     public List<Speaker> getSpeakers() {
         return speakers;
