@@ -16,9 +16,13 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="jdbc-templates" target="17" />
+      <module name="spring-data-jpa-demo" target="17" />
+      <module name="spring-data-jpa-example" target="17" />
       <module name="spring-data-jpa-flyway" target="17" />
+      <module name="spring-data-jpa-hibernate" target="15" />
       <module name="spring-data-jpa-hikaricp" target="17" />
       <module name="spring-data-jpa-pageable" target="17" />
+      <module name="spring-jdbc-template" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
