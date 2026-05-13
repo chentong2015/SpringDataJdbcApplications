@@ -6,11 +6,11 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import javax.sql.DataSource;
 import java.util.List;
 
-public class JdbcTemplateMapper {
+public class NameParameterJdbcTemplateMapper {
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
-    public JdbcTemplateMapper(DataSource dataSource) {
+    public NameParameterJdbcTemplateMapper(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 

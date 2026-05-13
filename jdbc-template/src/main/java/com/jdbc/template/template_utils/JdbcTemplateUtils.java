@@ -1,9 +1,5 @@
 package com.jdbc.template.template_utils;
 
-import com.jdbc.template.template_utils.model.Column;
-import com.jdbc.template.template_utils.model.MapSqlParameterSourceBuilder;
-import com.jdbc.template.template_utils.model.CustomSqlParameterSourceBuilder;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +20,7 @@ public class JdbcTemplateUtils {
     private static final String COLON = ":";
 
     public static CustomSqlParameterSourceBuilder getSqlParameterSourceBuilder(Map<String, String> namedParameterMap) {
-        return new MapSqlParameterSourceBuilder(namedParameterMap);
+        return new CustomSqlParameterSourceBuilderImpl(namedParameterMap);
     }
 
     /**

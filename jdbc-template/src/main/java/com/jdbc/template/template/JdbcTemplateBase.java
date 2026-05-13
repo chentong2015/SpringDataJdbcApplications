@@ -1,13 +1,16 @@
 package com.jdbc.template.template;
 
+import com.jdbc.template.model.InfoRowMapper;
+import com.jdbc.template.model.Information;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 
-@Repository("baseJdbcTemplate")
+@Service("jdbcTemplateBase")
 public class JdbcTemplateBase {
 
     private JdbcTemplate jdbcTemplate;
@@ -19,8 +22,8 @@ public class JdbcTemplateBase {
 
     // TODO. 更新数据时提供Object依次替换占位符的值
     public boolean insertInformation(Information info) {
-        String query = "INSERT INTO information (id, name, place, year) VALUES (?, ?, ?, ?)";
-        Object[] args = new Object[]{info.getId(), info.getName(), info.getPlace(), info.getYear()};
+        String query = "INSERT INTO information (id, name, place, info) VALUES (?, ?, ?, ?)";
+        Object[] args = new Object[]{info.getId(), info.getName(), info.getPlace(), info.getInfo()};
         return jdbcTemplate.update(query, args) == 1;
     }
 

@@ -1,19 +1,22 @@
 package com.jdbc.template.template;
 
+import com.jdbc.template.model.InfoRowMapper;
+import com.jdbc.template.model.Information;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
 // TODO. 使用具名参数替代传统的placeholder'?', 解决可读性和参数顺序问题
-@Repository("baseNamedParameterJdbcTemplate")
-public class JdbcTemplateNameParameter {
+@Service("nameParameterJdbcTemplateBase")
+public class NameParameterJdbcTemplateBase {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -25,8 +28,8 @@ public class JdbcTemplateNameParameter {
     // TODO. BeanPropertySqlParameterSource 从指定Java对象中获取具名参数值, 属性和参数名称必须一致
     public boolean insertInformation(Information info) {
         SqlParameterSource beanParams = new BeanPropertySqlParameterSource(info);
-        String sqlQuery = "INSERT INTO information (id, name, place, year) " +
-                "VALUES (:id, :name, :place, :year)";
+        String sqlQuery = "INSERT INTO information (id, name, place, info) " +
+                "VALUES (:id, :name, :place, :info)";
         return namedParameterJdbcTemplate.update(sqlQuery, beanParams) == 1;
     }
 

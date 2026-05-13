@@ -1,17 +1,19 @@
-package com.jdbc.template.template;
+package com.jdbc.template.model;
 
 public class Information {
 
     private int id;
     private String name;
     private String place;
-    private int year;
+    private String info;
 
-    public Information(int id, String name, String place, int year) {
+    private int refreshedId;
+
+    public Information(int id, String name, String place, String info) {
         this.id = id;
         this.name = name;
         this.place = place;
-        this.year = year;
+        this.info = info;
     }
 
     public int getId() {
@@ -38,12 +40,20 @@ public class Information {
         this.place = place;
     }
 
-    public int getYear() {
-        return year;
+    public String getInfo() {
+        return info;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public int getRefreshedId() {
+        return refreshedId;
+    }
+
+    public void setRefreshedId(int refreshedId) {
+        this.refreshedId = refreshedId;
     }
 
     @Override
@@ -52,7 +62,7 @@ public class Information {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", place='" + place + '\'' +
-                ", year=" + year +
+                ", info=" + info +
                 '}';
     }
 }

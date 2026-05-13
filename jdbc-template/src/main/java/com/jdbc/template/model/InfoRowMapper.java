@@ -1,4 +1,4 @@
-package com.jdbc.template.template;
+package com.jdbc.template.model;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.JdbcUtils;
@@ -24,6 +24,6 @@ public class InfoRowMapper implements RowMapper<Information> {
         return new Information(resultSet.getInt("id"),
                 resultSet.getString("name"),
                 resultSet.getString("place"),
-                resultSet.getInt("year"));
+                resultSet.getString("info"));
     }
 }
