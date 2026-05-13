@@ -1,4 +1,4 @@
-package demo.transaction_template;
+package demo.transaction.template;
 
 public interface CustomTransactionListener {
 

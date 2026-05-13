@@ -1,4 +1,4 @@
-package demo.transaction_template;
+package demo.transaction.template;
 
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.TransactionDefinition;

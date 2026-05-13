@@ -11,10 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface TransactionUserRepository extends CrudRepository<User, Long> {
 
-    // TODO. 设置事务传播的不同类型
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     User findByEmail(String email);
 
-    // @Transactional(rollbackFor = SQLException.class)
-    // User updateByEmail(String email);
+    // 默认基于RuntimeException异常来回滚
+    @Transactional(rollbackFor = RuntimeException.class)
+    User updateByEmail(String email);
 }
