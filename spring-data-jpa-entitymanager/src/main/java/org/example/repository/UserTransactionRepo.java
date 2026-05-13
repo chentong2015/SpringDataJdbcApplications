@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-// 利用Spring框架事务和EntityManager来执行数据更新
+// 使用EntityManager + Spring Transactional来执行数据更新
 @Repository
 public class UserTransactionRepo {
 

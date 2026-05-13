@@ -1,4 +1,4 @@
-package org.example.transaction;
+package org.example.transaction_fail;
 
 import org.springframework.transaction.annotation.Transactional;
 
