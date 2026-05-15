@@ -1,4 +1,4 @@
-package demo.repository.entitygraph.entity;
+package demo.entitygraph.entity;
 
 import jakarta.persistence.*;
 

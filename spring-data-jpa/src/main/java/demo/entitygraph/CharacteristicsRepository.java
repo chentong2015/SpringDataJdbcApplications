@@ -1,6 +1,6 @@
-package demo.repository.entitygraph;
+package demo.entitygraph;
 
-import demo.repository.entitygraph.entity.Characteristic;
+import demo.entitygraph.entity.Characteristic;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

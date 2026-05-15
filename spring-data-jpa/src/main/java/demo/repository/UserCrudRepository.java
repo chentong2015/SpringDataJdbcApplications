@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface UserCrudRepository extends CrudRepository<User, Long>, JpaSpecificationExecutor<User> {
 
-    // 默认的查询与特定的方法名称一致
+    // 自动解析成对应Query来执行
     User findByEmail(String email);
 
     // 提供特殊查询条件Specification来查询结果
@@ -24,7 +24,9 @@ public interface UserCrudRepository extends CrudRepository<User, Long>, JpaSpeci
     @Modifying(clearAutomatically = true)
     void deleteUserByEmail(String email);
 
+    // Modifying自定义执行修改的SQL，设置具名参数名称
     @Modifying
     @Query(value = "update t_users u set u.name = :name where u.email like :e1%", nativeQuery = true)
-    void updateUserNameByEmail(@Param("name") String newName, @Param("e1") String email);
+    void updateUserNameByEmail(@Param("name") String newName,
+                               @Param("e1") String email);
 }

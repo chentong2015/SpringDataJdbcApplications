@@ -1,0 +1,17 @@
+TODO. 两种查询方式:
+@Query(value) - 针对JPA的查询语句，基于Entity Name实体对象 !
+兼容性好，但会根据Entity类生成完整且关联Query执行，不易控制
+编译时初步检查JPQL/HQL语句，底层执行时翻译成SQL
+
+@Query(value, nativeQuery = true) - 原生SQL查询语句，基于Table表的SQL !
+兼容性查，容易控制，针对特定DB执行优化
+可调用丰富的Function，比如CAST时间处理
+
+
+TODO. 方法解析规则:
+- 如果有@Query, 则执行自定义的查询
+- 如果没有@Query, 则根据方法名称解析, 无法解析则报错
+
+TODO. JpaRepository接口方法如何实现 ?
+Spring Data JPA自动为接口生成Proxy Impl类型, 实现接口中方法
+xxx.Repository$$SpringCGLIB$$0.insert(<generated>) 参考调用链

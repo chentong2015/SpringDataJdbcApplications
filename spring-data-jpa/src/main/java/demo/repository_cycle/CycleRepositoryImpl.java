@@ -1,4 +1,4 @@
-package demo.repository.cycle;
+package demo.repository_cycle;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

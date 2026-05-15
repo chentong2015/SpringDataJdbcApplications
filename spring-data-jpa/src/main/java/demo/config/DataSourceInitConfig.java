@@ -1,4 +1,4 @@
-package demo;
+package demo.config;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.DataSourceInitializer;

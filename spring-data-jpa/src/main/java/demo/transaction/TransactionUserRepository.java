@@ -16,5 +16,5 @@ public interface TransactionUserRepository extends CrudRepository<User, Long> {
 
     // 默认基于RuntimeException异常来回滚
     @Transactional(rollbackFor = RuntimeException.class)
-    User updateByEmail(String email);
+    User deleteUserByEmail(String email);
 }
