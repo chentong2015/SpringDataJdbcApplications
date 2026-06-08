@@ -6,7 +6,7 @@ import net.ttddyy.dsproxy.listener.QueryExecutionListener;
 
 import java.util.List;
 
-// 定义Query执行前后的监听器
+// TODO. 定义Query执行前后的监听器: 无法显示SQL的完整数据
 public class MyQueryExecutionListener implements QueryExecutionListener {
 
     @Override

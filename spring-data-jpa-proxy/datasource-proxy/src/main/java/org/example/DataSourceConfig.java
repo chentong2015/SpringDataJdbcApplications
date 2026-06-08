@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 public class DataSourceConfig {
 
     // 底层实际被包装的DataSource
-    @Bean(name = "originalDataSource")
+    @Bean(name = "realDataSource")
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setJdbcUrl("jdbc:oracle:thin:@//localhost:1531/orclcdb");
@@ -28,11 +28,11 @@ public class DataSourceConfig {
 
     // 创建DataSource代理并作为首要数据源
     @Primary
-    @Bean
-    public ProxyDataSource proxyDataSource(@Qualifier("originalDataSource") DataSource original) {
+    @Bean(name = "proxyDataSource")
+    public ProxyDataSource proxyDataSource(@Qualifier("realDataSource") DataSource original) {
         return ProxyDataSourceBuilder
                 .create(original)
-                .name("MyDataSource")
+                .name("MyProxyDataSourceName")
                 .countQuery()
                 .logQueryBySlf4j(SLF4JLogLevel.INFO)
                 .listener(new MyQueryExecutionListener())
