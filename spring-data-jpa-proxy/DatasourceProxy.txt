@@ -8,5 +8,5 @@ TODO. Datasource 数据源
 2. P6Spy 数据源拦截器, 分析完整Query语句性能优化
    Open-source, free library for intercepting SQL logs
 
+https://p6spy.readthedocs.io/en/latest/integration.html
 https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
-https://p6spy.readthedocs.io/en/latest/configandusage.html
