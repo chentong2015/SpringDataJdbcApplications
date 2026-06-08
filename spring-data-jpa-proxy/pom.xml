@@ -3,19 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>SpringDataJdbcApplications</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <groupId>org.example</groupId>
-    <artifactId>SpringDataJdbcApplications</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>spring-data-jpa-proxy</artifactId>
     <packaging>pom</packaging>
-
     <modules>
-        <module>jdbc-template</module>
-        <module>spring-data-jpa</module>
-        <module>spring-data-jpa-entitymanager</module>
-        <module>spring-data-jpa-feature</module>
-        <module>spring-data-jpa-proxy</module>
-        <module>spring-data-jpa-test</module>
+        <module>datasource-decorator</module>
+        <module>datasource-proxy</module>
     </modules>
 
     <properties>
@@ -23,4 +21,5 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
 </project>
