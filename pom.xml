@@ -15,7 +15,7 @@
         <module>spring-data-jpa-entitymanager</module>
         <module>spring-data-jpa-feature</module>
         <module>spring-data-jpa-proxy</module>
-        <module>spring-data-jpa-test</module>
+        <module>spring-data-jpa-hibernate</module>
     </modules>
 
     <properties>

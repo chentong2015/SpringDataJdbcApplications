@@ -1,31 +1,35 @@
 package org.example;
 
+import com.zaxxer.hikari.HikariDataSource;
 import net.ttddyy.dsproxy.listener.logging.SLF4JLogLevel;
 import net.ttddyy.dsproxy.support.ProxyDataSource;
 import net.ttddyy.dsproxy.support.ProxyDataSourceBuilder;
 import org.example.listener.MyQueryExecutionListener;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
 @Configuration
 public class DataSourceConfig {
-    
-    @Bean
+
+    // 底层实际被包装的DataSource
+    @Bean(name = "originalDataSource")
     public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl("jdbc:oracle:thin:@//localhost:1531/orclcdb");
-        dataSource.setDriverClassName("org.hibernate.dialect.OracleDialect");
+        HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setJdbcUrl("jdbc:oracle:thin:@//localhost:1531/orclcdb");
+        dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
         dataSource.setUsername("fum");
         dataSource.setPassword("test1");
         return dataSource;
     }
 
-    // TODO. 添加DataSource层的代理
+    // 创建DataSource代理并作为首要数据源
+    @Primary
     @Bean
-    public ProxyDataSource proxyDataSource(DataSource original) {
+    public ProxyDataSource proxyDataSource(@Qualifier("originalDataSource") DataSource original) {
         return ProxyDataSourceBuilder
                 .create(original)
                 .name("MyDataSource")

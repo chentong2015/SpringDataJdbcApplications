@@ -10,8 +10,8 @@
         <module name="spring-data-jpa-feature" />
         <module name="datasource-proxy" />
         <module name="jdbc-template" />
+        <module name="spring-data-jpa-hibernate" />
         <module name="spring-data-jpa-entitymanager" />
-        <module name="spring-data-jpa-test" />
         <module name="datasource-decorator" />
       </profile>
     </annotationProcessing>
@@ -20,7 +20,6 @@
       <module name="spring-data-jpa-demo" target="17" />
       <module name="spring-data-jpa-example" target="17" />
       <module name="spring-data-jpa-flyway" target="17" />
-      <module name="spring-data-jpa-hibernate" target="15" />
       <module name="spring-data-jpa-hikaricp" target="17" />
       <module name="spring-data-jpa-p6spy" target="17" />
       <module name="spring-data-jpa-pageable" target="17" />

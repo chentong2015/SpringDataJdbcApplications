@@ -1,0 +1,12 @@
+TODO. Datasource 数据源
+- DriverManagerDataSource 不适合生产, 不支持连接池
+- HikariCP Spring Boot 默认连接池
+
+TODO. Datasource proxy 数据源代理
+- Provide a datasource proxy that can inject your own logic into all queries.
+
+TODO. P6Spy 数据源拦截器, 分析完整Query语句性能优化
+- Open-source, free library for intercepting SQL logs
+
+https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
+https://p6spy.readthedocs.io/en/latest/configandusage.html

@@ -1,8 +1,8 @@
 package org.example;
 
+import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
@@ -11,9 +11,9 @@ public class DataSourceConfig {
     
     @Bean
     public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl("jdbc:oracle:thin:@//localhost:1531/orclcdb");
-        dataSource.setDriverClassName("org.hibernate.dialect.OracleDialect");
+        HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setJdbcUrl("jdbc:oracle:thin:@//localhost:1531/orclcdb");
+        dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
         dataSource.setUsername("fum");
         dataSource.setPassword("test1");
         return dataSource;

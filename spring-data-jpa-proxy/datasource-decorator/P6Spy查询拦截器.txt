@@ -1,6 +1,0 @@
-TODO. P6Spy查询拦截器，分析完整Query语句性能优化
-- Datasource proxy
-- Open-source, free library for intercepting SQL logs
-
-https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
-https://p6spy.readthedocs.io/en/latest/configandusage.html
