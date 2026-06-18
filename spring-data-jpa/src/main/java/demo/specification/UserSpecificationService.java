@@ -1,7 +1,6 @@
-package demo.service;
+package demo.specification;
 
 import demo.entity.User;
-import demo.repository.UserCrudRepository;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
 import jakarta.persistence.criteria.Subquery;
@@ -51,5 +50,24 @@ public class UserSpecificationService {
             return criteriaBuilder.and(lessThan, likeName, notDefaultEmail);
         };
         return userRepository.findAll(specification);
+    }
+
+    // 创建关于子查询的Specification, 查询常量
+    // where exists {
+    //   select 1
+    //   from t_users u
+    //   where u.relatedId = 'relatedId'
+    //   and u.id = 'id'
+    // }
+    public <T> Specification<T> buildSpecification(String relatedId, String id) {
+        return (root, query, criteriaBuilder) -> {
+            Subquery<Integer> subquery = query.subquery(Integer.class);
+            Root<User> userRoot = subquery.from(User.class);
+
+            subquery.select(criteriaBuilder.literal(1))
+                    .where(criteriaBuilder.equal(userRoot.get("relatedId"), relatedId),
+                            criteriaBuilder.equal(userRoot.get("id"), id));
+            return criteriaBuilder.exists(subquery);
+        };
     }
 }

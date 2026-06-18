@@ -1,7 +1,7 @@
 package demo.service;
 
 import demo.entity.User;
-import demo.repository.UserCrudRepository;
+import demo.specification.UserCrudRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,4 +1,4 @@
-package demo.repository_cycle;
+package demo.repository.cycle;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

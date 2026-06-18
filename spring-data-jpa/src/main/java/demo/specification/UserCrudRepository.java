@@ -1,4 +1,4 @@
-package demo.repository;
+package demo.specification;
 
 import demo.entity.User;
 import org.springframework.data.jpa.domain.Specification;

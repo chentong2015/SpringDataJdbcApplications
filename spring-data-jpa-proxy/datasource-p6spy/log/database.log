@@ -1,3 +1,4 @@
+// 耗时的Query会在执行完后再显示 //
 1770288402685|1533|statement|select * from all_sequences
 1770288403368|27|statement|create global temporary table HTE_t_users(rn_ number(10,0) not null, id number(19,0), email varchar2(255 char), name varchar2(255 char), primary key (rn_)) on commit delete rows
 1770288404915|1344|statement|select * from all_sequences

@@ -1,7 +1,7 @@
 package demo.controller;
 
 import demo.entity.User;
-import demo.service.UserSpecificationService;
+import demo.specification.UserSpecificationService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

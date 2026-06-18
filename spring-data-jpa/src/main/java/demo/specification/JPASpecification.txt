@@ -1,4 +1,6 @@
 TODO. JpaSpecification 根据特定Specification条件进行查询
+- JPA Specification 无法表达UNION ALL
+- JPA Pageable 无法接合UNION ALL
 
 // 实现以下接口则为Repo添加特定查询方法
 public interface JpaSpecificationExecutor<T> {
