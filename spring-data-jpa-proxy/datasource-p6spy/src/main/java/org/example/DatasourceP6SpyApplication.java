@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DatasourceDecoratorP6SpyApp {
+public class DatasourceP6SpyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DatasourceDecoratorP6SpyApp.class, args);
+        SpringApplication.run(DatasourceP6SpyApplication.class, args);
     }
 }

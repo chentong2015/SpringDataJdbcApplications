@@ -26,7 +26,7 @@ public class DataSourceConfig {
         return dataSource;
     }
 
-    // 创建DataSource代理并作为首要数据源
+    // TODO. 封装底层DataSource -> ProxyDataSource代理
     @Primary
     @Bean(name = "proxyDataSource")
     public ProxyDataSource proxyDataSource(@Qualifier("realDataSource") DataSource original) {
@@ -36,6 +36,18 @@ public class DataSourceConfig {
                 .countQuery()
                 .logQueryBySlf4j(SLF4JLogLevel.INFO)
                 .listener(new MyQueryExecutionListener())
-                .build();
+                .build(); // 生成ProxyDataSource对象
+    }
+
+    // TODO. 封装底层DataSource -> 纯JDK Proxy代理对象
+    // Exception: Cannot cast jdk.proxy2.$Proxy172 to com.zaxxer.hikari.HikariDataSource
+    public DataSource jdkProxyDataSource(DataSource original) {
+        return ProxyDataSourceBuilder
+                .create(original)
+                .name("MyProxyDataSourceName")
+                .countQuery()
+                .logQueryBySlf4j(SLF4JLogLevel.INFO)
+                .listener(new MyQueryExecutionListener())
+                .buildProxy(); // 调用Proxy.newProxyInstance()方法
     }
 }

@@ -2,7 +2,7 @@ TODO. Datasource 数据源(数据库连接资源)
 - DriverManagerDataSource 不适合生产, 不支持连接池
 - HikariCP Spring Boot 默认连接池
 
-TODO. 同时使用两个Proxy可能有兼容问题
+TODO. 同时使用两个Proxy可能冲突(重复代理)
 1. Datasource proxy 数据源代理 -> 默认无法显示SQL完整数据
    Provide a datasource proxy that can inject your own logic into all queries.
 2. P6Spy 数据源拦截器 -> 分析完整Query语句性能优化

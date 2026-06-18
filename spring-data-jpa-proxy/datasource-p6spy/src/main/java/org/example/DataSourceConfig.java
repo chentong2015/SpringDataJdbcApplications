@@ -8,7 +8,8 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DataSourceConfig {
-    
+
+    // TODO. 封装底层HikariDataSource -> com.p6spy.engine.spy.P6DataSource代理
     @Bean
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();
